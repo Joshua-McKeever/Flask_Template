@@ -14,3 +14,4 @@ Other functional features include:
 - No-Login Required Pages
 - Multifactor Authentication Required Pages
 - Self-Service User Profile Updates
+- Self-Service Password Reset
