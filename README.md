@@ -25,6 +25,21 @@ Other functional features include:
 6. Create a virtual environment e.g. mkvirtualenv {your app name} --python=/usr/bin/python3.10 https://help.pythonanywhere.com/pages/VirtualEnvForWebsites
 7. Install the requirements package e.g. pip install -r /home/{your user name}/{your app name}/requirements.txt
 8. Update your web app to use the virtual environment e.g. /home/{your user name}/.virtualenvs/{your app name}
-9. Update the ".env" file with your information **You MUST change these values to ensure your site is safe
--- Placeholder
-11. Reload your Web App
+9. Update the ".env" file with your information **You MUST change these values to ensure your site is safe (See below for example)
+10. Reload your Web App
+
+
+## Example .env file
+session_len_min=60  
+flask_sec_key='ferg5yh8ik'  
+db_uri='mysql://{db username}:{db password}@{your username}.mysql.pythonanywhere-services.com/{db username}$default'  
+default_admin_firstname = 'Indiana'  
+default_admin_lastname = 'Jones'  
+default_admin_email = 'IndianaJones@example.com'  
+default_admin_password = '8304KJLnmd*(u3'  
+email_from = 'no-reply@example.com'  
+email_smtp = 'smtp.example.com'  
+email_subject = 'Web Application Password Reset'  
+email_reset_link = 'https://{your username}.pythonanywhere.com'  
+email_username = 'no-reply@example.com'  
+email_password = 'lksI(#9jJ'  
