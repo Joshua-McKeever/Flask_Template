@@ -26,4 +26,5 @@ Other functional features include:
 7. Install the requirements package e.g. pip install -r /home/{your user name}/{your app name}/requirements.txt
 8. Update your web app to use the virtual environment e.g. /home/{your user name}/.virtualenvs/{your app name}
 9. Update the ".env" file with your information **You MUST change these values to ensure your site is safe
-10. Reload your Web App
+-- Placeholder
+11. Reload your Web App
