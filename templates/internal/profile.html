@@ -1,0 +1,28 @@
+{% extends "internal/layout.html" %}
+{% block content %}
+
+<!-- Profile Section -->
+<div class="w3-content w3-justify w3-text-grey w3-padding-64" id="profile">
+    <h2 class="w3-text-light-grey">My Profile</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <div class="form-group">
+        <!-- Profile Form -->
+        <form method="POST" action="{{ url_for('profile') }}">
+            <!-- Start of hidden fields -->
+            <input id="user_id" name="user_id" type="hidden" required readonly value ="{{ user_id }}">
+            <!-- Start of editable fields -->
+            <label for="my_first_name">First Name</label>
+            <input id="my_first_name" name="my_first_name" required value ="{{ my_first_name }}">
+            <label for="my_last_name">Lase Name</label>
+            <input id="my_last_name" name="my_last_name" required value ="{{ my_last_name }}">
+            <label for="my_2fa_pref">Enable Two-Factor Authentication</label>
+            <input type="checkbox" id="my_2fa_pref" name="my_2fa_pref" {% if my_2fa_pref %}checked{% endif %}>
+            <label for="my_email">Email</label>
+            <input id="my_email" name="my_email" readonly value ="{{ my_email }}">
+            </br>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

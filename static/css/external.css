@@ -1,0 +1,139 @@
+body {
+    background-color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    color: #ffffff;
+}
+
+.form-group {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.form-group h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    width:230px;
+    height:230px;
+    box-shadow:8px 8px white inset;
+    border-radius: 25px;
+    border: 2px solid #222222;
+}
+
+.form-group label {
+    color: #ffffff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333333;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    background-color: #444444;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #555555;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #666666;
+}
+
+a {
+    color: #EFEEEA; /* Off White as main color */
+    text-decoration: none; /* Removes default underline */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+a:hover {
+    color: #FE7743; /* Orange on hover */
+    text-decoration: underline; /* Optional: underline on hover */
+}
+
+a:visited {
+    color: #273F4F; /* Navy for visited links */
+}
+
+a:active {
+    color: #FE7743; /* Orange when clicked */
+}
+
+/* Style for flash messages */
+.flash-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px 40px 10px 20px; /* Extra padding on right for close button */
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    position: fixed; /* Use fixed to float above page */
+    top: 20px; /* Distance from top of viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset by half its width */
+    z-index: 1000; /* Ensure it’s above other content */
+    display: flex; /* Flex for centering text and close button */
+    align-items: center; /* Vertically center content */
+    max-width: 500px; /* Limit width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: shadow for depth */
+    animation: fadeInOut 0.5s ease-in-out; /* Fade animation */
+}
+
+/* Fade-in animation */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+    100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* Style for the close button */
+.close-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the X */
+    cursor: pointer;
+    font-weight: bold;
+    color: #155724;
+}
+.close-btn:hover {
+    color: #dc3545;
+}
+
+/* One Time Password */
+.otp-container input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  margin: 0 5px;
+  font-size: 18px;
+}

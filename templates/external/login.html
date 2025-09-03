@@ -1,0 +1,21 @@
+{% extends "external/external_layout.html" %}
+{% block content %}
+
+<img src="{{ url_for('static', filename='/images/logo.png') }}" alt="a website logo">
+<h2>Web Application Login</h2>
+<p>Please enter your email and password.</p>
+<form action="#" method="post">
+    <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit" class="btn">Login</button>
+</form>
+<p>Register <a href="{{ url_for('register') }}">here</a>.</p>
+<p>Forgot Password <a href="{{ url_for('forgot_password') }}">here</a>.</p>
+
+{% endblock %}

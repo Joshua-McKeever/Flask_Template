@@ -1,0 +1,23 @@
+{% extends "external/external_layout.html" %}
+{% block content %}
+
+<img src="{{ url_for('static', filename='/images/logo.png') }}" alt="a website logo">
+<h2>Two-Factor Authentication Setup</h2>
+<p>Please register for multifactor authentication.</p>
+
+<ol style="text-align: left;">
+
+    <li>Scan the QR code below with your authenticator app such as Google Authenticator (<a href="https://apps.apple.com/us/app/google-authenticator/id388497605" target="_blank">iOS</a> or <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&pcampaignid=web_share" target="_blank">Android</a>) or Microsoft Authenticator (<a href="https://apps.apple.com/us/app/microsoft-authenticator/id983156458" target="_blank">iOS</a> or <a href="https://play.google.com/store/apps/details?id=com.azure.authenticator&pcampaignid=web_share" target="_blank">Android</a>)</br><i><small>On your mobile device? Add the account manually using the Secret Token below.</i></small></li>
+    <div class="text-center">
+        <img src="data:image/png;base64, {{ qr_image }}" alt="Secret Token" style="width:200px;height:200px"/>
+    </div>
+    <li>Copy your secret token to a safe place as it will be used to reconfigure the authenticator in case of a lost or stolen device.</li>
+    <div class="text-center mt-2">
+        <label for="secret">Secret Token</label>
+        <input type="text" class="form-control" id="secret" value="{{ secret }}" readonly>
+    </div>
+    </br>
+    <li>Click <a href="{{ url_for('twofa_verify') }}">here</a> to verify and complete your setup.</li>
+</ol>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Falanx</title>
+    {% endif %}
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/misc.css') }}">
+</head>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="/static/images/logo.png" alt="a website logo" style="width:120px">
+  <a href="{{ url_for('home') }}" class="w3-bar-item w3-button w3-padding-large {% if request.path == '/home' %}w3-black{% else %}w3-hover-black{% endif %}">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="{{ url_for('logout') }}" class="w3-bar-item w3-button w3-padding-large {% if request.path == '/logout' %}w3-black{% else %}w3-hover-black{% endif %}">
+    <i class="fa fa-sign-out w3-xxlarge"></i>
+    <p>SIGN OUT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="{{ url_for('home') }}" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="{{ url_for('logout') }}" class="w3-bar-item w3-button" style="width:25% !important">SIGN OUT</a>
+  </div>
+</div>
+
+<!-- Header Content -->
+<div class="w3-padding-large" id="main">
+
+    <div class="w3-container w3-padding-32 w3-center w3-black" id="messages">
+        <!-- Display flash messages with close button -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li class="flash-message">
+                            {{ message }}
+                            <span class="close-btn" onclick="this.parentElement.style.display='none';">X</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+<!-- Page Content -->
+{% block content %}{% endblock %}
+
+</div>
+
+<!-- Footer -->
+<footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <a href="https://www.linkedin.com/" target="_blank" class="w3-hover-text-green" title="LinkedIn"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <a href="{{ url_for('profile') }}" class="w3-hover-text-green" title="Update profile"><i class="fa fa-user w3-hover-opacity"></i></a>
+    <a href="{{ url_for('support') }}" class="w3-hover-text-green" title="Get support"><i class="fa fa-envelope w3-hover-opacity"></i></a>
+    <a href="{{ url_for('forgot_password') }}" class="w3-hover-text-green" title="Reset Password"><i class="fa fa-unlock-alt w3-hover-opacity"></i></a>
+    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+<!-- End footer -->
+</footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>

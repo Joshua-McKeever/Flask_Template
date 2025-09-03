@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Falanx</title>
+    {% endif %}
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/external.css') }}">
+</head>
+<body>
+<div class="form-group">
+    <div class="w3-container w3-padding-32 w3-center w3-black" id="messages">
+        <!-- Display flash messages with close button -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li class="flash-message">
+                            {{ message }}
+                            <span class="close-btn" onclick="this.parentElement.style.display='none';">X</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <!-- Page Content -->
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

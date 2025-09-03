@@ -1,0 +1,19 @@
+{% extends "external/external_layout.html" %}
+{% block content %}
+
+<img src="{{ url_for('static', filename='/images/logo.png') }}" alt="a website logo">
+<h2>Two-Factor Verification</h2>
+<p>Open Google Authenticator on your mobile device and enter the verification code below.</p>
+
+<p>Please verify.</p>
+<form method="POST" action="{{ url_for('twofa_verify') }}">
+    <label for="enter_otp">Enter One Time Passcode (OTP):</label>
+    </br>
+    <input id="enter_otp" name="enter_otp" type="text" pattern="[0-9]{6}" maxlength="6" inputmode="numeric" required placeholder="Enter 6-digit OTP">
+    </br>
+    </br>
+    <button type="submit" style="width: 80px; height:40px">Verify</button>
+    </br>
+</form>
+
+{% endblock %}

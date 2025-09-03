@@ -1,0 +1,31 @@
+{% extends "external/external_layout.html" %}
+{% block content %}
+
+<img src="{{ url_for('static', filename='/images/logo.png') }}" alt="a website logo">
+<h2>Web Application Registration</h2>
+<p>Please complete the form to register.</br>You will be prompted to setup two-factor authentication on the next page.</p>
+<form action="#" method="post">
+    <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+        <label for="first_name">First Name</label>
+        <input type="input" id="first_name" name="first_name" required>
+    </div>
+    <div>
+        <label for="last_name">Last Name</label>
+        <input type="input" id="last_name" name="last_name" required>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <div>
+        <label for="verify_password">Verify Password</label>
+        <input type="password" id="verify_password" name="verify_password" required>
+    </div>
+    <button type="submit" class="btn">Register</button>
+</form>
+
+{% endblock %}
